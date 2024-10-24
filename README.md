@@ -7,7 +7,7 @@ Practicas donde aplicamos las colas o queues en python
 # Instalación
 1. Clona el repositorio por ejemplo: 
     ```pwsh
-    Git clone <Link del repositorio>
+    Git clone https://github.com/JuniRanger/Colas-DataStructure.git
 
 2. Cuando esten ahi, escribiran en su terminal el siguiente comadno
     ```pwsh
