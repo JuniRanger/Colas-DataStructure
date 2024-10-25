@@ -49,7 +49,7 @@ Para hacer un push a este repositorio y subir tus cambios, sigue estos pasos:
     git push origin main
     ```
 
-    ## Cómo actualizar tu código desde GitHub
+## Cómo actualizar tu código desde GitHub
 
 Si quieres asegurarte de tener la versión más reciente del código antes de trabajar, sigue estos pasos:
 

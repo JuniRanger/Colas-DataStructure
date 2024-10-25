@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-
+from ejercicio1.window import Interface1
 class MainApp:
     def __init__(self, root):
         self.root = root
@@ -11,7 +11,7 @@ class MainApp:
         # Configuración de label
         self.label = tk.Label(self.root, text="Practica Colas en Python")
         self.label.pack(padx=10, pady=10)
-        self.label.config(font=("Helvetica", 30), background="#292b2c", fg="#ffcc00")
+        self.label.config(font=("Helvetica", 30), background="#292b2c", fg="#87CEEB")
 
         # Configuración de botones
         self.CrearBoton("Ventanilla de banco", self.AbrirEjercicio1).pack(pady=10, padx=20)
@@ -25,14 +25,15 @@ class MainApp:
             font=("Helvetica", 16),  # Aumentar tamaño de fuente
             width=20,                # Ancho del botón
             height=3,                # Altura del botón
-            bg="#ffcc00",            # Color de fondo
+            bg="#87CEEB",            # Color de fondo
             fg="black",              # Color del texto
             command=command          # Llama a la función correspondiente
         )
 
     # Métodos para cada ejercicio
     def AbrirEjercicio1(self):
-        self.AbrirVentana("Ejercicio 1", "Este es el Ejercicio 1")
+        new_window = tk.Toplevel(self.root)
+        Interface1(new_window)
 
     def AbrirEjercicio2(self):
         self.AbrirVentana("Ejercicio 2", "Este es el Ejercicio 2")
