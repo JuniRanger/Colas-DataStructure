@@ -50,3 +50,5 @@ class QueueLogic:
     def EndGame(self):
         if self.queue_timer:
             self.queue_timer.cancel()
+
+

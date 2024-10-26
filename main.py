@@ -1,14 +1,17 @@
 import tkinter as tk
 from tkinter import ttk
-from ejercicio1.window import Interface1
+from ejercicio1.window import Interface1  # Importar ventana del ejercicio 1
+from ejercicio2.window import Interface2  # Importar ventana del ejercicio 2
+from ejercicio3.window import Interface3  # Importar ventana del ejercicio 3
+
 class MainApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Ejercicio colas en python")
+        self.root.title("Ejercicio colas en Python")
         self.root.geometry("620x420")
         self.root.config(background="#292b2c")
 
-        # Configuración de label
+        # Configuración de label principal
         self.label = tk.Label(self.root, text="Practica Colas en Python")
         self.label.pack(padx=10, pady=10)
         self.label.config(font=("Helvetica", 30), background="#292b2c", fg="#87CEEB")
@@ -22,34 +25,32 @@ class MainApp:
         return tk.Button(
             self.root, 
             text=text, 
-            font=("Helvetica", 16),  # Aumentar tamaño de fuente
-            width=20,                # Ancho del botón
-            height=3,                # Altura del botón
-            bg="#87CEEB",            # Color de fondo
-            fg="black",              # Color del texto
-            command=command          # Llama a la función correspondiente
+            font=("Helvetica", 16),
+            width=20,
+            height=3,
+            bg="#87CEEB",
+            fg="black",
+            command=command
         )
 
-    # Métodos para cada ejercicio
+    # Métodos para abrir las interfaces de cada ejercicio
     def AbrirEjercicio1(self):
         new_window = tk.Toplevel(self.root)
         Interface1(new_window)
 
     def AbrirEjercicio2(self):
-        self.AbrirVentana("Ejercicio 2", "Este es el Ejercicio 2")
+        new_window = tk.Toplevel(self.root)
+        Interface2(new_window)
 
     def AbrirEjercicio3(self):
-        self.AbrirVentana("Ejercicio 3", "Este es el Ejercicio 3")
-
-    # Función para abrir una nueva ventana con el texto del ejercicio
-    def AbrirVentana(self, titulo, texto):
-        nueva_ventana = tk.Toplevel(self.root)
-        nueva_ventana.title(titulo)
-        label = ttk.Label(nueva_ventana, text=texto)
-        label.pack(padx=20, pady=20)
+        new_window = tk.Toplevel(self.root)
+        Interface3(new_window)
 
 # Crear la ventana principal
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = MainApp(root)
-    root.mainloop()
+    try:
+        root = tk.Tk()
+        app = MainApp(root)
+        root.mainloop()
+    except Exception as e:
+        print(f"Ocurrió un error en la aplicación: {e}")
